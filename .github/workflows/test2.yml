@@ -1,0 +1,23 @@
+name: Test
+on:
+  workflow_dispatch:
+
+jobs:
+  github-app-token:
+    runs-on: ubuntu-latest
+    name: Get app token
+    environment: prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get app token
+        id: get_app_token
+        uses: ./
+        with:
+          APP_PEM: ${{ secrets.INNER_SOURCE_BOT_APP_KEY }}
+          APP_ID: 115213
+          APP_INSTALLATION_ID: 16908128
+      - name: Check length of token
+        env:
+          THE_TOKEN: ${{ steps.get_app_token.outputs.app_token }}
+        run: echo ${#THE_TOKEN}
