@@ -4,6 +4,7 @@ import time
 import requests
 import jwt
 import os
+import json
 
 
 class BearerAuth(requests.auth.AuthBase):
@@ -51,12 +52,31 @@ if __name__ == '__main__':
 
     #Check for GPG Commit Signing
 
+
+    url = "https://api.github.com/users/sampka/repos"
+
+    headers = {
+      'Content-Type': 'application/json',
+      'Authorization': f"Bearer {token}"
+    }
+
+
+    payload = json.dumps({
+    "subscribed": "true"
+    })
+
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+
+    print(response.text.name)
+
+
+
+
+
     url = "https://api.github.com/repos/sampka/AWS-EC2/branches/master/protection/required_signatures"
 
     payload={}
-    headers = {
-      'Authorization': f"Bearer {token}"
-    }
 
     response = requests.request("GET", url, headers=headers, data=payload)
 
