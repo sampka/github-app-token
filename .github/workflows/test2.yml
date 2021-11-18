@@ -23,6 +23,6 @@ jobs:
         run: echo ${THE_TOKEN}
       - name: Get GPG Commit info
         env:
-          IS_SIGNED: ${{ steps.get_app_token.outputs.text }}
+          IS_SIGNED: ${{ steps.get_app_token.outputs.info }}
         run: echo ${IS_SIGNED}
        
