@@ -5,20 +5,20 @@ on:
 jobs:
   github-app-token:
     runs-on: ubuntu-latest
-    name: Get app token
+    name: Get app tok
     environment: prod
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get app token
-        id: get_app_token
+        id: get_app_tok
         uses: ./
         with:
           APP_PEM: ${{ secrets.APP_PEM }}
           APP_ID: 152604
           APP_INSTALLATION_ID: 20769765
-      - name: Check length of token
-        run: echo ${{ steps.get_app_token.outputs.app_token }}
+      - name: Check length of tok
         env:
-          THE_TOKEN: ${{ steps.get_app_token.outputs.app_token }}
+          THE_TOK: ${{ steps.get_app_tok.outputs.app_tok }}
+        run: echo ${{ steps.get_app_tok.outputs.app_tok }}
        
