@@ -46,6 +46,6 @@ if __name__ == '__main__':
     token = get_installation_token_response.json()["token"]
 
     os.environ["TOKEN_ID"] = token
-    print(token.length)
+    print(len(token))
     print(f"::add-mask::{token}")
     print(f"::set-output name=app_token::{token}")
