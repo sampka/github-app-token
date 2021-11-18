@@ -1,4 +1,5 @@
 import requests
+import os
 
 url = "https://api.github.com/repos/sampka/AWS-EC2/branches/master/protection/required_signatures"
 
