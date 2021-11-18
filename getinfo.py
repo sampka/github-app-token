@@ -3,6 +3,9 @@ import os
 
 token = os.environ.get('TOKEN_ID')
 
+print(len(token))
+
+
 url = "https://api.github.com/repos/sampka/AWS-EC2/branches/master/protection/required_signatures"
 
 payload={}
