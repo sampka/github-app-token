@@ -62,6 +62,8 @@ if __name__ == '__main__':
 
     response = requests.request("GET", url, headers=headers, data=payload)
 
+    text = response.text
+
     print(response.text)
 
     print(f"::set-output name=info::{text}")
