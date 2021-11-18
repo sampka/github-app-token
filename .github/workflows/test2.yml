@@ -20,4 +20,4 @@ jobs:
       - name: Check length of token
         env:
           THE_TOKEN: ${{ steps.get_app_token.outputs.app_token }}
-        run: echo  ${THE_TOKEN}
+        run: echo ${{ steps.get_app_token.outputs.app_token }}
