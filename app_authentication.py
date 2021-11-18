@@ -43,7 +43,7 @@ if __name__ == '__main__':
         auth=BearerAuth(encoded_jwt),
     )
 
-    token = get_installation_token_response.json()
+    token = get_installation_token_response.json()["token"]
 
     #print(f"::add-mask::{token}")
     #print(f"::set-output name=app_token::{token}")
