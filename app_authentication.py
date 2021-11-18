@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     token = get_installation_token_response.json()["token"]
 
-    decoded = jwt.decode(token, options={"verify_signature": False})
+    decoded = jwt.decode(token)
     
     print(f"::add-mask::{token}")
     #print(f"::set-output name=app_token::{token}")
