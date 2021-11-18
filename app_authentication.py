@@ -12,6 +12,7 @@ class BearerAuth(requests.auth.AuthBase):
 
     def __call__(self, r):
         r.headers["authorization"] = f"Bearer {self.token}"
+        print(r)
         return r
 
 if __name__ == '__main__':
@@ -47,6 +48,7 @@ if __name__ == '__main__':
 
     os.environ["TOKEN_ID"] = str({token})
     print(os.environ.get("TOKEN_ID"))
+    
 
     print(f"::add-mask::{token}")
     print(f"::set-output name=app_token::{token}")
