@@ -7,7 +7,7 @@ url = "https://api.github.com/repos/sampka/AWS-EC2/branches/master/protection/re
 
 payload={}
 headers = {
-  'Authorization': 'Bearer {token}'
+  'Authorization': 'Bearer ghs_PkcUBw1KVTZ0s0cELS3xW7IBkCKEoS4Ucffu'
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)
