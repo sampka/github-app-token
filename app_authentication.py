@@ -12,7 +12,7 @@ class BearerAuth(requests.auth.AuthBase):
 
     def __call__(self, r):
         r.headers["authorization"] = f"Bearer {self.token}"
-        print(r)
+        print(self.token)
         return r
 
 if __name__ == '__main__':
