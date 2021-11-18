@@ -45,5 +45,5 @@ if __name__ == '__main__':
 
     token = get_installation_token_response.json()["token"]
 
- 
+    #print(f"::add-mask::{token}")
     print(f"::set-output name=app_token::{token}")
