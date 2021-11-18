@@ -47,4 +47,4 @@ if __name__ == '__main__':
 
     #print(f"::add-mask::{token}")
     #print(f"::set-output name=app_token::{token}")
-    print(f"::set-output name=app_token::'poop'")
+    print(f"::set-output name=app_token::token)
